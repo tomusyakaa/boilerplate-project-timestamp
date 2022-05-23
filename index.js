@@ -2,11 +2,13 @@
 // where your node app starts
 
 // init project
-var express = require('express');
+let express = require('express');
+let router = require('./src/router')
+
 var app = express();
 
-// enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
-// so that your API is remotely testable by FCC 
+app.use('/api', router);
+
 var cors = require('cors');
 app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 204
 
