@@ -15,7 +15,7 @@ router.get('/:date?', function (req, res, next) {
         res.json({ error : "Invalid Date" });
     }
 
-    let unix = Math.floor(date.getTime() / 1000)
+    let unix = Math.floor(date.getTime())
     let utc = date.toUTCString();
 
     res.json({unix: unix, utc: utc});
